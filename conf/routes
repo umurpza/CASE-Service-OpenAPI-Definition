@@ -1,0 +1,34 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /api                        controllers.ApiDocController.api
+
+
+#Functions for AssociationsManager API
+GET     /ims/case/v1p0/CFAssociations/:sourcedId                     controllers.AssociationsManagerApiController.getCFAssociation(request: Request, sourcedId: String)
+GET     /ims/case/v1p0/CFItemAssociations/:sourcedId                     controllers.AssociationsManagerApiController.getCFItemAssociations(request: Request, sourcedId: String)
+
+#Functions for DefinitionsManager API
+GET     /ims/case/v1p0/CFAssociationGroupings/:sourcedId                     controllers.DefinitionsManagerApiController.getCFAssociationGrouping(request: Request, sourcedId: String)
+GET     /ims/case/v1p0/CFConcepts/:sourcedId                     controllers.DefinitionsManagerApiController.getCFConcept(request: Request, sourcedId: String)
+GET     /ims/case/v1p0/CFItemTypes/:sourcedId                     controllers.DefinitionsManagerApiController.getCFItemType(request: Request, sourcedId: String)
+GET     /ims/case/v1p0/CFLicenses/:sourcedId                     controllers.DefinitionsManagerApiController.getCFLicense(request: Request, sourcedId: String)
+GET     /ims/case/v1p0/CFSubjects/:sourcedId                     controllers.DefinitionsManagerApiController.getCFSubject(request: Request, sourcedId: String)
+
+#Functions for DocumentsManager API
+GET     /ims/case/v1p0/CFDocuments                     controllers.DocumentsManagerApiController.getAllCFDocuments(request: Request)
+GET     /ims/case/v1p0/CFDocuments/:sourcedId                     controllers.DocumentsManagerApiController.getCFDocument(request: Request, sourcedId: String)
+
+#Functions for ItemsManager API
+GET     /ims/case/v1p0/CFItems/:sourcedId                     controllers.ItemsManagerApiController.getCFItem(request: Request, sourcedId: String)
+
+#Functions for PackagesManager API
+GET     /ims/case/v1p0/CFPackages/:sourcedId                     controllers.PackagesManagerApiController.getCFPackage(request: Request, sourcedId: String)
+
+#Functions for RubricsManager API
+GET     /ims/case/v1p0/CFRubrics/:sourcedId                     controllers.RubricsManagerApiController.getCFRubric(request: Request, sourcedId: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET /assets/*file           controllers.Assets.at(file)
+GET /versionedAssets/*file  controllers.Assets.versioned(file)
